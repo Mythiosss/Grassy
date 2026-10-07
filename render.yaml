@@ -1,0 +1,24 @@
+# One-click deploy on Render: serves the phone app AND the optional Smart-mode API.
+# Add TabPFN by uncommenting the last line of requirements-tabpfn.txt use below.
+services:
+  - type: web
+    name: grassy
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt   # for TabPFN: pip install -r requirements.txt -r requirements-tabpfn.txt
+    startCommand: python -m grassy.server
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      # Optional extras (leave unset to run fully offline-capable):
+      - key: GRASSY_BASE_URL    # OpenAI-compatible endpoint serving Gemma
+        sync: false
+      - key: GRASSY_MODEL
+        sync: false
+      - key: GRASSY_API_KEY
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: ELEVENLABS_VOICE_ID
+        sync: false

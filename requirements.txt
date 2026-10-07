@@ -1,0 +1,4 @@
+# Smart-mode server runtime (the phone app itself needs none of this)
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4

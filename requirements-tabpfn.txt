@@ -1,0 +1,5 @@
+-r requirements.txt
+# Optional: the TabPFN forecaster. Check Prior Labs' current license terms for your use case.
+tabpfn
+# Optional: official public holidays for any country
+holidays

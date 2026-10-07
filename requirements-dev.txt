@@ -1,0 +1,4 @@
+-r requirements.txt
+matplotlib>=3.8   # backtest chart
+Pillow>=10        # tools/make_icons.py
+playwright>=1.45  # tests/e2e_*.py (optional)
